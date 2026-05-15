@@ -3,307 +3,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Para Belén ❤️</title>
+
+  <title>Felicidades Belén 🎉</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     body {
       min-height: 100vh;
-      font-family: Arial, sans-serif;
-      background: radial-gradient(circle at top, #ff9acb, #2b0f24 75%);
-      color: white;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffb6d9, #ffdff0, #fff6fb);
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
       text-align: center;
-      overflow: hidden;
       padding: 20px;
     }
 
     .card {
-      width: min(92vw, 640px);
-      background: rgba(255, 255, 255, 0.14);
-      border: 2px solid rgba(255, 255, 255, 0.35);
-      border-radius: 30px;
-      padding: 32px 24px;
+      width: min(92vw, 760px);
+      background: rgba(255, 255, 255, 0.32);
       backdrop-filter: blur(10px);
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      border-radius: 30px;
+      padding: 30px 22px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
       position: relative;
-      z-index: 10;
+      z-index: 20;
     }
 
     h1 {
-      font-size: clamp(28px, 7vw, 48px);
-      margin-bottom: 12px;
+      font-size: clamp(30px, 7vw, 58px);
+      color: #d81b60;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    h2 {
+      font-size: clamp(22px, 5vw, 38px);
+      color: #8e24aa;
+      margin-bottom: 14px;
     }
 
     p {
-      font-size: clamp(17px, 4vw, 22px);
-      line-height: 1.45;
+      font-size: clamp(17px, 4vw, 24px);
+      color: #5c2952;
+      line-height: 1.4;
       margin-bottom: 18px;
-      opacity: 0.95;
-    }
-
-    .attempts-box {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      border-radius: 999px;
-      padding: 10px 18px;
-      margin-bottom: 20px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #fff3c8;
-    }
-
-    .quiz {
-      text-align: left;
-      margin-top: 10px;
-    }
-
-    .question {
-      background: rgba(255, 255, 255, 0.13);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 20px;
-      padding: 18px;
-      margin-bottom: 16px;
-    }
-
-    .question strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-
-    label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-right: 16px;
-      margin-top: 8px;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    input[type="radio"] {
-      transform: scale(1.2);
-      accent-color: #ff4f9a;
     }
 
     button {
       border: none;
-      padding: 15px 26px;
+      background: linear-gradient(90deg, #ff4fa3, #ff7e5f);
+      color: white;
       font-size: 20px;
-      border-radius: 999px;
-      background: white;
-      color: #c2185b;
       font-weight: bold;
+      padding: 15px 26px;
+      border-radius: 999px;
       cursor: pointer;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      margin-top: 10px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+      margin-top: 8px;
     }
 
     button:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+      transform: scale(1.05);
     }
 
-    button:disabled {
-      cursor: not-allowed;
-      opacity: 0.55;
-      transform: none;
-    }
-
-    .result {
-      margin-top: 18px;
-      min-height: 28px;
-      font-size: 18px;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .locked {
-      margin-top: 16px;
-      font-size: 38px;
-      opacity: 0.95;
-      text-align: center;
-    }
-
-    .surprise,
-    .blocked-page {
+    .hidden {
       display: none;
-      margin-top: 22px;
-      animation: aparecer 1s ease forwards;
     }
 
-    .surprise.show,
-    .blocked-page.show {
+    .celebration {
+      margin-top: 20px;
+      animation: aparecer 1s ease;
+    }
+
+    .main-message {
+      font-size: clamp(24px, 5vw, 40px);
+      font-weight: bold;
+      color: #c2185b;
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .foto-belen {
+      width: min(72vw, 260px);
+      height: 260px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 28px;
+      border: 5px solid white;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+      margin: 15px auto 20px;
       display: block;
+      animation: flotarFoto 1.8s infinite alternate ease-in-out;
     }
 
-    .cat-scene {
-      position: relative;
-      height: 430px;
-      margin-top: 10px;
+    .sub-message {
+      font-size: clamp(18px, 4vw, 28px);
+      color: #6a1b9a;
+      margin-bottom: 22px;
+      font-weight: bold;
+    }
+
+    .cats {
       display: flex;
       justify-content: center;
-      align-items: flex-end;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 12px;
     }
 
     .cat {
-      position: absolute;
-      bottom: 0;
-      width: 180px;
-      height: 150px;
-      background: #f6c27a;
-      border-radius: 48% 48% 42% 42%;
-      box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.08);
+      font-size: clamp(42px, 9vw, 74px);
+      animation: bailar 0.7s infinite alternate ease-in-out;
+      display: inline-block;
     }
 
-    .cat::before,
-    .cat::after {
+    .cat:nth-child(2) {
+      animation-delay: 0.15s;
+    }
+
+    .cat:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .cat:nth-child(4) {
+      animation-delay: 0.45s;
+    }
+
+    .cat:nth-child(5) {
+      animation-delay: 0.6s;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -140px;
+      width: 65px;
+      height: 85px;
+      border-radius: 50%;
+      z-index: 4;
+      animation: subirGlobo linear forwards;
+    }
+
+    .balloon::before {
       content: "";
       position: absolute;
-      top: -38px;
-      width: 68px;
-      height: 68px;
-      background: #f6c27a;
-      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    }
-
-    .cat::before {
-      left: 18px;
-      transform: rotate(-12deg);
-    }
-
-    .cat::after {
-      right: 18px;
-      transform: rotate(12deg);
-    }
-
-    .face {
-      position: absolute;
-      top: 50px;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: center;
-      gap: 45px;
-    }
-
-    .eye {
-      width: 16px;
-      height: 22px;
-      background: #3a1f13;
-      border-radius: 50%;
-      animation: parpadeo 4s infinite;
-    }
-
-    .nose {
-      position: absolute;
-      top: 82px;
+      bottom: -30px;
       left: 50%;
+      width: 2px;
+      height: 35px;
+      background: rgba(80, 80, 80, 0.65);
       transform: translateX(-50%);
-      width: 16px;
-      height: 12px;
-      background: #e85d75;
-      border-radius: 50%;
     }
 
-    .mouth {
-      position: absolute;
-      top: 98px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 26px;
-      color: #3a1f13;
-    }
-
-    .sign {
-      position: absolute;
-      top: 0;
-      width: min(86vw, 460px);
-      background: #fff3c8;
-      color: #8a164a;
-      border: 4px solid #d98c9e;
-      border-radius: 22px;
-      padding: 18px 16px;
-      font-size: clamp(18px, 4.5vw, 27px);
-      line-height: 1.25;
-      font-weight: bold;
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
-      animation: cartel 1.3s ease-in-out infinite alternate;
-    }
-
-    .blocked-sign {
-      color: #5a1230;
-      border-color: #ff6f91;
-      font-size: clamp(22px, 5vw, 31px);
-    }
-
-    .sign::before,
-    .sign::after {
+    .balloon::after {
       content: "";
       position: absolute;
-      bottom: -98px;
-      width: 10px;
-      height: 98px;
-      background: #8b5a2b;
-      border-radius: 8px;
-    }
-
-    .sign::before {
-      left: 28%;
-    }
-
-    .sign::after {
-      right: 28%;
-    }
-
-    .kiss {
-      position: absolute;
-      bottom: 115px;
-      right: 25%;
-      font-size: 42px;
-      opacity: 0;
-      transform: scale(0.4) rotate(-15deg);
-      z-index: 20;
-      pointer-events: none;
-    }
-
-    .kiss.show {
-      animation: beso 2.4s ease-out forwards;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 12px solid rgba(255, 255, 255, 0.45);
     }
 
     .heart {
       position: absolute;
-      bottom: -40px;
-      font-size: 28px;
-      animation: subir 5s linear forwards;
+      top: -30px;
+      font-size: 26px;
+      animation: caer 5s linear forwards;
       pointer-events: none;
-      z-index: 1;
+      z-index: 3;
     }
 
-    @keyframes beso {
-      0% {
-        opacity: 0;
-        transform: translate(0, 0) scale(0.4) rotate(-15deg);
+    .confetti {
+      position: absolute;
+      top: -20px;
+      width: 10px;
+      height: 16px;
+      opacity: 0.9;
+      animation: caer 4.5s linear forwards;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    @keyframes bailar {
+      from {
+        transform: translateY(0) rotate(-8deg) scale(1);
       }
 
-      20% {
-        opacity: 1;
-        transform: translate(10px, -20px) scale(1) rotate(8deg);
+      to {
+        transform: translateY(-14px) rotate(8deg) scale(1.08);
+      }
+    }
+
+    @keyframes flotarFoto {
+      from {
+        transform: translateY(0) scale(1);
+      }
+
+      to {
+        transform: translateY(-8px) scale(1.03);
+      }
+    }
+
+    @keyframes subirGlobo {
+      0% {
+        transform: translateY(0);
+        opacity: 0.95;
       }
 
       100% {
+        transform: translateY(-125vh);
         opacity: 0;
-        transform: translate(85px, -95px) scale(1.4) rotate(20deg);
+      }
+    }
+
+    @keyframes caer {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
       }
     }
 
@@ -318,222 +250,135 @@
         transform: scale(1);
       }
     }
-
-    @keyframes subir {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0;
-      }
-
-      15% {
-        opacity: 1;
-      }
-
-      100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-
-    @keyframes cartel {
-      from {
-        transform: translateY(0) rotate(-1deg);
-      }
-
-      to {
-        transform: translateY(-8px) rotate(1deg);
-      }
-    }
-
-    @keyframes parpadeo {
-      0%, 92%, 100% {
-        transform: scaleY(1);
-      }
-
-      95% {
-        transform: scaleY(0.1);
-      }
-    }
   </style>
 </head>
 
 <body>
-  <div class="card" id="card">
-    <h1>Desbloqueá tu sorpresa ❤️</h1>
-    <p>Respondé estas 2 preguntas de Verdadero o Falso sobre la FPP.</p>
 
-    <div class="attempts-box" id="attemptsBox">
-      Solo tienes 2 intentos · Intentos restantes: 2
+  <div class="card">
+    <div id="intro">
+      <h1>🎉 Sorpresa 🎉</h1>
+      <h2>Para Belén</h2>
+      <p>Presioná el botón para ver tu felicitación especial.</p>
+      <button onclick="iniciarSorpresa()">Ver sorpresa</button>
     </div>
 
-    <div class="quiz" id="quiz">
-      <div class="question">
-        <strong>1) La FPP muestra las combinaciones máximas de dos bienes que se pueden producir con recursos y tecnología dados.</strong>
-        <label><input type="radio" name="q1" value="v"> Verdadero</label>
-        <label><input type="radio" name="q1" value="f"> Falso</label>
+    <div id="celebration" class="celebration hidden">
+      <div class="main-message">
+        ¡Felicidades Belén por aprobar tu parcial! 🎓🎉
       </div>
 
-      <div class="question">
-        <strong>2) Un punto por fuera de la FPP es alcanzable con los recursos actuales.</strong>
-        <label><input type="radio" name="q2" value="v"> Verdadero</label>
-        <label><input type="radio" name="q2" value="f"> Falso</label>
+      <img class="foto-belen" src="belen.png" alt="Foto especial de Belén">
+
+      <div class="sub-message">
+        Estoy muy orgulloso de vos 💖
       </div>
 
-      <button id="unlockBtn" onclick="verificarRespuestas()">Desbloquear mensaje</button>
-
-      <div class="result" id="result"></div>
-      <div class="locked" id="locked">🔒</div>
-    </div>
-
-    <div class="surprise" id="surprise">
-      <div class="cat-scene">
-        <div class="sign">
-          Eres mi persona favorita,<br>
-          eres muy importante para mí.<br>
-          Quiero pasar el resto de mi vida contigo.<br>
-          Te quiero, Belén ❤️<br>
-          Me gustaría hacer varias cosas contigo<br>
-          en los años de vida que me queden,<br>
-          estando a tu lado.
-        </div>
-
-        <div class="kiss" id="kiss">💋</div>
-
-        <div class="cat">
-          <div class="face">
-            <div class="eye"></div>
-            <div class="eye"></div>
-          </div>
-          <div class="nose"></div>
-          <div class="mouth">⌣</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="blocked-page" id="blockedPage">
-      <div class="cat-scene">
-        <div class="sign blocked-sign">
-          Esta página fue bloqueada 🔒<br>
-          Solo tenías 2 intentos
-        </div>
-
-        <div class="cat">
-          <div class="face">
-            <div class="eye"></div>
-            <div class="eye"></div>
-          </div>
-          <div class="nose"></div>
-          <div class="mouth">⌣</div>
-        </div>
+      <div class="cats">
+        <span class="cat">🐱</span>
+        <span class="cat">😸</span>
+        <span class="cat">🐱</span>
+        <span class="cat">😺</span>
+        <span class="cat">🐈</span>
       </div>
     </div>
   </div>
 
   <script>
-    let errores = 0;
-    const maxIntentos = 2;
     let musicaIniciada = false;
-    let lluviaActiva = false;
+    let animacionesIniciadas = false;
 
-    function verificarRespuestas() {
-      const q1 = document.querySelector('input[name="q1"]:checked');
-      const q2 = document.querySelector('input[name="q2"]:checked');
+    function iniciarSorpresa() {
+      document.getElementById('intro').classList.add('hidden');
+      document.getElementById('celebration').classList.remove('hidden');
 
-      const result = document.getElementById('result');
-      const locked = document.getElementById('locked');
-      const surprise = document.getElementById('surprise');
-      const quiz = document.getElementById('quiz');
-      const blockedPage = document.getElementById('blockedPage');
-      const attemptsBox = document.getElementById('attemptsBox');
-      const unlockBtn = document.getElementById('unlockBtn');
-
-      if (!q1 || !q2) {
-        result.textContent = 'Tenés que responder las dos preguntas primero 💌';
-        return;
+      if (!animacionesIniciadas) {
+        animacionesIniciadas = true;
+        lanzarConfeti();
+        lanzarCorazones();
+        lanzarGlobos();
+        iniciarMusicaAlegre();
       }
+    }
 
-      if (q1.value === 'v' && q2.value === 'f') {
-        result.textContent = 'Correcto, mensaje desbloqueado ❤️';
-        locked.textContent = '🔓';
-        attemptsBox.textContent = '¡Correcto! Sorpresa desbloqueada ❤️';
+    function lanzarConfeti() {
+      crearExplosionConfeti(130);
+      setInterval(() => crearExplosionConfeti(25), 1700);
+    }
 
-        iniciarMusicaRomantica();
+    function crearExplosionConfeti(cantidad) {
+      const colores = [
+        '#ff4fa3',
+        '#ff9800',
+        '#ffd54f',
+        '#7c4dff',
+        '#26c6da',
+        '#66bb6a'
+      ];
+
+      for (let i = 0; i < cantidad; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.background = colores[Math.floor(Math.random() * colores.length)];
+        confetti.style.animationDuration = (3 + Math.random() * 3) + 's';
+        confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+        document.body.appendChild(confetti);
 
         setTimeout(() => {
-          quiz.style.display = 'none';
-          surprise.classList.add('show');
-          activarCorazones();
-          setTimeout(tirarBesito, 2600);
-        }, 800);
+          confetti.remove();
+        }, 7000);
+      }
+    }
 
-      } else {
-        errores++;
-        const intentosRestantes = maxIntentos - errores;
+    function lanzarCorazones() {
+      setInterval(() => {
+        for (let i = 0; i < 6; i++) {
+          const heart = document.createElement('div');
+          heart.classList.add('heart');
 
-        if (intentosRestantes > 0) {
-          result.textContent = 'Casi, pero hay una respuesta incorrecta. Te queda 1 intento 😺';
-          attemptsBox.textContent = 'Solo tienes 2 intentos · Intentos restantes: ' + intentosRestantes;
-          crearCorazones(8);
-        } else {
-          result.textContent = 'Se acabaron los intentos.';
-          attemptsBox.textContent = 'Solo tienes 2 intentos · Intentos restantes: 0';
-          locked.textContent = '🔒';
-          unlockBtn.disabled = true;
+          heart.innerHTML = Math.random() > 0.5 ? '💖' : '💗';
+          heart.style.left = Math.random() * 100 + 'vw';
+          heart.style.fontSize = (18 + Math.random() * 18) + 'px';
+          heart.style.animationDuration = (3 + Math.random() * 3) + 's';
 
-          document.querySelectorAll('input[type="radio"]').forEach((input) => {
-            input.disabled = true;
-          });
+          document.body.appendChild(heart);
 
           setTimeout(() => {
-            quiz.style.display = 'none';
-            blockedPage.classList.add('show');
-            crearCorazones(15);
-          }, 800);
+            heart.remove();
+          }, 7000);
         }
-      }
+      }, 1200);
     }
 
-    function tirarBesito() {
-      const kiss = document.getElementById('kiss');
-      if (!kiss) return;
+    function lanzarGlobos() {
+      const colores = [
+        'linear-gradient(180deg, #ff5fa2, #ff2d7a)',
+        'linear-gradient(180deg, #7c4dff, #5e35b1)',
+        'linear-gradient(180deg, #ffb300, #ff8f00)',
+        'linear-gradient(180deg, #26c6da, #00acc1)',
+        'linear-gradient(180deg, #66bb6a, #43a047)'
+      ];
 
-      kiss.classList.remove('show');
-      void kiss.offsetWidth;
-      kiss.classList.add('show');
+      setInterval(() => {
+        const balloon = document.createElement('div');
+        balloon.classList.add('balloon');
+
+        balloon.style.left = Math.random() * 92 + 'vw';
+        balloon.style.background = colores[Math.floor(Math.random() * colores.length)];
+        balloon.style.animationDuration = (7 + Math.random() * 4) + 's';
+
+        document.body.appendChild(balloon);
+
+        setTimeout(() => {
+          balloon.remove();
+        }, 13000);
+      }, 900);
     }
 
-    function activarCorazones() {
-      if (lluviaActiva) return;
-
-      lluviaActiva = true;
-      crearCorazones(35);
-
-      setInterval(() => crearCorazon(), 450);
-    }
-
-    function crearCorazones(cantidad) {
-      for (let i = 0; i < cantidad; i++) {
-        setTimeout(crearCorazon, i * 80);
-      }
-    }
-
-    function crearCorazon() {
-      const corazon = document.createElement('div');
-      corazon.classList.add('heart');
-      corazon.innerHTML = Math.random() > 0.5 ? '❤️' : '💕';
-
-      corazon.style.left = Math.random() * 100 + 'vw';
-      corazon.style.fontSize = (18 + Math.random() * 34) + 'px';
-      corazon.style.animationDuration = (3 + Math.random() * 3) + 's';
-
-      document.body.appendChild(corazon);
-
-      setTimeout(() => {
-        corazon.remove();
-      }, 6500);
-    }
-
-    function iniciarMusicaRomantica() {
+    function iniciarMusicaAlegre() {
       if (musicaIniciada) return;
 
       musicaIniciada = true;
@@ -546,45 +391,50 @@
       }
 
       const master = audioCtx.createGain();
-      master.gain.value = 0.12;
+      master.gain.value = 0.10;
       master.connect(audioCtx.destination);
 
-      const notas = [
-        { f: 392.00, t: 0.0 },
-        { f: 440.00, t: 0.45 },
-        { f: 493.88, t: 0.9 },
-        { f: 587.33, t: 1.35 },
-        { f: 523.25, t: 1.8 },
-        { f: 493.88, t: 2.25 },
-        { f: 440.00, t: 2.7 },
-        { f: 392.00, t: 3.15 }
+      const melodia = [
+        { f: 523.25, t: 0.00 },
+        { f: 659.25, t: 0.25 },
+        { f: 783.99, t: 0.50 },
+        { f: 659.25, t: 0.75 },
+        { f: 698.46, t: 1.00 },
+        { f: 783.99, t: 1.25 },
+        { f: 880.00, t: 1.50 },
+        { f: 783.99, t: 1.75 },
+        { f: 659.25, t: 2.00 },
+        { f: 523.25, t: 2.25 },
+        { f: 659.25, t: 2.50 },
+        { f: 783.99, t: 2.75 }
       ];
 
       function tocarMelodia() {
         const ahora = audioCtx.currentTime;
 
-        notas.forEach((nota) => {
+        melodia.forEach((nota) => {
           const osc = audioCtx.createOscillator();
           const gain = audioCtx.createGain();
 
-          osc.type = 'sine';
+          osc.type = 'triangle';
           osc.frequency.setValueAtTime(nota.f, ahora + nota.t);
 
-          gain.gain.setValueAtTime(0, ahora + nota.t);
-          gain.gain.linearRampToValueAtTime(0.45, ahora + nota.t + 0.05);
-          gain.gain.exponentialRampToValueAtTime(0.001, ahora + nota.t + 0.42);
+          gain.gain.setValueAtTime(0.0001, ahora + nota.t);
+          gain.gain.exponentialRampToValueAtTime(0.25, ahora + nota.t + 0.03);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ahora + nota.t + 0.22);
 
           osc.connect(gain);
           gain.connect(master);
 
           osc.start(ahora + nota.t);
-          osc.stop(ahora + nota.t + 0.5);
+          osc.stop(ahora + nota.t + 0.24);
         });
       }
 
       tocarMelodia();
-      setInterval(tocarMelodia, 3900);
+      setInterval(tocarMelodia, 3200);
     }
   </script>
+
 </body>
 </html>
