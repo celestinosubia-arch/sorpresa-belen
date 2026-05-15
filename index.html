@@ -1,383 +1,435 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Para Belén ❤️</title>
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }body {
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background: radial-gradient(circle at top, #ff9acb, #2b0f24 75%);
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  padding: 20px;
-}
+    }
 
-.card {
-  width: min(92vw, 640px);
-  background: rgba(255, 255, 255, 0.14);
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  border-radius: 30px;
-  padding: 32px 24px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
-  position: relative;
-  z-index: 10;
-}
+    body {
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #ff9acb, #2b0f24 75%);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 20px;
+    }
 
-h1 {
-  font-size: clamp(28px, 7vw, 48px);
-  margin-bottom: 12px;
-}
+    .card {
+      width: min(92vw, 640px);
+      background: rgba(255, 255, 255, 0.14);
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      border-radius: 30px;
+      padding: 32px 24px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+      position: relative;
+      z-index: 10;
+    }
 
-p {
-  font-size: clamp(17px, 4vw, 22px);
-  line-height: 1.45;
-  margin-bottom: 18px;
-  opacity: 0.95;
-}
+    h1 {
+      font-size: clamp(28px, 7vw, 48px);
+      margin-bottom: 12px;
+    }
 
-.attempts-box {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 999px;
-  padding: 10px 18px;
-  margin-bottom: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #fff3c8;
-}
+    p {
+      font-size: clamp(17px, 4vw, 22px);
+      line-height: 1.45;
+      margin-bottom: 18px;
+      opacity: 0.95;
+    }
 
-.quiz {
-  text-align: left;
-  margin-top: 10px;
-}
+    .attempts-box {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 999px;
+      padding: 10px 18px;
+      margin-bottom: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff3c8;
+    }
 
-.question {
-  background: rgba(255, 255, 255, 0.13);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 20px;
-  padding: 18px;
-  margin-bottom: 16px;
-}
+    .quiz {
+      text-align: left;
+      margin-top: 10px;
+    }
 
-.question strong {
-  display: block;
-  font-size: 18px;
-  margin-bottom: 12px;
-}
+    .question {
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 18px;
+      margin-bottom: 16px;
+    }
 
-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-right: 16px;
-  margin-top: 8px;
-  cursor: pointer;
-  font-size: 18px;
-}
+    .question strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
 
-input[type="radio"] {
-  transform: scale(1.2);
-  accent-color: #ff4f9a;
-}
+    label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 16px;
+      margin-top: 8px;
+      cursor: pointer;
+      font-size: 18px;
+    }
 
-button {
-  border: none;
-  padding: 15px 26px;
-  font-size: 20px;
-  border-radius: 999px;
-  background: white;
-  color: #c2185b;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-top: 10px;
-}
+    input[type="radio"] {
+      transform: scale(1.2);
+      accent-color: #ff4f9a;
+    }
 
-button:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
-}
+    button {
+      border: none;
+      padding: 15px 26px;
+      font-size: 20px;
+      border-radius: 999px;
+      background: white;
+      color: #c2185b;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin-top: 10px;
+    }
 
-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.55;
-  transform: none;
-}
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4);
+    }
 
-.result {
-  margin-top: 18px;
-  min-height: 28px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
+    button:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+      transform: none;
+    }
 
-.locked {
-  margin-top: 16px;
-  font-size: 38px;
-  opacity: 0.95;
-  text-align: center;
-}
+    .result {
+      margin-top: 18px;
+      min-height: 28px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
 
-.surprise,
-.blocked-page {
-  display: none;
-  margin-top: 22px;
-  animation: aparecer 1s ease forwards;
-}
+    .locked {
+      margin-top: 16px;
+      font-size: 38px;
+      opacity: 0.95;
+      text-align: center;
+    }
 
-.surprise.show,
-.blocked-page.show {
-  display: block;
-}
+    .surprise,
+    .blocked-page {
+      display: none;
+      margin-top: 22px;
+      animation: aparecer 1s ease forwards;
+    }
 
-.cat-scene {
-  position: relative;
-  height: 340px;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
+    .surprise.show,
+    .blocked-page.show {
+      display: block;
+    }
 
-.cat {
-  position: absolute;
-  bottom: 0;
-  width: 180px;
-  height: 150px;
-  background: #f6c27a;
-  border-radius: 48% 48% 42% 42%;
-  box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.08);
-}
+    .cat-scene {
+      position: relative;
+      height: 430px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
 
-.cat::before,
-.cat::after {
-  content: "";
-  position: absolute;
-  top: -38px;
-  width: 68px;
-  height: 68px;
-  background: #f6c27a;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-}
+    .cat {
+      position: absolute;
+      bottom: 0;
+      width: 180px;
+      height: 150px;
+      background: #f6c27a;
+      border-radius: 48% 48% 42% 42%;
+      box-shadow: inset -10px -10px 0 rgba(0, 0, 0, 0.08);
+    }
 
-.cat::before {
-  left: 18px;
-  transform: rotate(-12deg);
-}
+    .cat::before,
+    .cat::after {
+      content: "";
+      position: absolute;
+      top: -38px;
+      width: 68px;
+      height: 68px;
+      background: #f6c27a;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
 
-.cat::after {
-  right: 18px;
-  transform: rotate(12deg);
-}
+    .cat::before {
+      left: 18px;
+      transform: rotate(-12deg);
+    }
 
-.face {
-  position: absolute;
-  top: 50px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  gap: 45px;
-}
+    .cat::after {
+      right: 18px;
+      transform: rotate(12deg);
+    }
 
-.eye {
-  width: 16px;
-  height: 22px;
-  background: #3a1f13;
-  border-radius: 50%;
-  animation: parpadeo 4s infinite;
-}
+    .face {
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 45px;
+    }
 
-.nose {
-  position: absolute;
-  top: 82px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 12px;
-  background: #e85d75;
-  border-radius: 50%;
-}
+    .eye {
+      width: 16px;
+      height: 22px;
+      background: #3a1f13;
+      border-radius: 50%;
+      animation: parpadeo 4s infinite;
+    }
 
-.mouth {
-  position: absolute;
-  top: 98px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 26px;
-  color: #3a1f13;
-}
+    .nose {
+      position: absolute;
+      top: 82px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 12px;
+      background: #e85d75;
+      border-radius: 50%;
+    }
 
-.sign {
-  position: absolute;
-  top: 0;
-  width: min(86vw, 430px);
-  background: #fff3c8;
-  color: #8a164a;
-  border: 4px solid #d98c9e;
-  border-radius: 22px;
-  padding: 20px 18px;
-  font-size: clamp(21px, 5vw, 31px);
-  line-height: 1.25;
-  font-weight: bold;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
-  animation: cartel 1.3s ease-in-out infinite alternate;
-}
+    .mouth {
+      position: absolute;
+      top: 98px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 26px;
+      color: #3a1f13;
+    }
 
-.blocked-sign {
-  color: #5a1230;
-  border-color: #ff6f91;
-}
+    .sign {
+      position: absolute;
+      top: 0;
+      width: min(86vw, 460px);
+      background: #fff3c8;
+      color: #8a164a;
+      border: 4px solid #d98c9e;
+      border-radius: 22px;
+      padding: 18px 16px;
+      font-size: clamp(18px, 4.5vw, 27px);
+      line-height: 1.25;
+      font-weight: bold;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+      animation: cartel 1.3s ease-in-out infinite alternate;
+    }
 
-.sign::before,
-.sign::after {
-  content: "";
-  position: absolute;
-  bottom: -98px;
-  width: 10px;
-  height: 98px;
-  background: #8b5a2b;
-  border-radius: 8px;
-}
+    .blocked-sign {
+      color: #5a1230;
+      border-color: #ff6f91;
+      font-size: clamp(22px, 5vw, 31px);
+    }
 
-.sign::before {
-  left: 28%;
-}
+    .sign::before,
+    .sign::after {
+      content: "";
+      position: absolute;
+      bottom: -98px;
+      width: 10px;
+      height: 98px;
+      background: #8b5a2b;
+      border-radius: 8px;
+    }
 
-.sign::after {
-  right: 28%;
-}
+    .sign::before {
+      left: 28%;
+    }
 
-.heart {
-  position: absolute;
-  bottom: -40px;
-  font-size: 28px;
-  animation: subir 5s linear forwards;
-  pointer-events: none;
-  z-index: 1;
-}
+    .sign::after {
+      right: 28%;
+    }
 
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+    .kiss {
+      position: absolute;
+      bottom: 115px;
+      right: 25%;
+      font-size: 42px;
+      opacity: 0;
+      transform: scale(0.4) rotate(-15deg);
+      z-index: 20;
+      pointer-events: none;
+    }
 
-@keyframes subir {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0;
-  }
-  15% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-110vh) rotate(360deg);
-    opacity: 0;
-  }
-}
+    .kiss.show {
+      animation: beso 2.4s ease-out forwards;
+    }
 
-@keyframes cartel {
-  from {
-    transform: translateY(0) rotate(-1deg);
-  }
-  to {
-    transform: translateY(-8px) rotate(1deg);
-  }
-}
+    .heart {
+      position: absolute;
+      bottom: -40px;
+      font-size: 28px;
+      animation: subir 5s linear forwards;
+      pointer-events: none;
+      z-index: 1;
+    }
 
-@keyframes parpadeo {
-  0%, 92%, 100% {
-    transform: scaleY(1);
-  }
-  95% {
-    transform: scaleY(0.1);
-  }
-}
+    @keyframes beso {
+      0% {
+        opacity: 0;
+        transform: translate(0, 0) scale(0.4) rotate(-15deg);
+      }
 
+      20% {
+        opacity: 1;
+        transform: translate(10px, -20px) scale(1) rotate(8deg);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(85px, -95px) scale(1.4) rotate(20deg);
+      }
+    }
+
+    @keyframes aparecer {
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes subir {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      15% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes cartel {
+      from {
+        transform: translateY(0) rotate(-1deg);
+      }
+
+      to {
+        transform: translateY(-8px) rotate(1deg);
+      }
+    }
+
+    @keyframes parpadeo {
+      0%, 92%, 100% {
+        transform: scaleY(1);
+      }
+
+      95% {
+        transform: scaleY(0.1);
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="card" id="card">
     <h1>Desbloqueá tu sorpresa ❤️</h1>
-    <p>Respondé estas 2 preguntas de Verdadero o Falso sobre la FPP.</p><div class="attempts-box" id="attemptsBox">
-  Solo tienes 2 intentos · Intentos restantes: 2
-</div>
+    <p>Respondé estas 2 preguntas de Verdadero o Falso sobre la FPP.</p>
 
-<div class="quiz" id="quiz">
-  <div class="question">
-    <strong>1) La FPP muestra las combinaciones máximas de dos bienes que se pueden producir con recursos y tecnología dados.</strong>
-    <label><input type="radio" name="q1" value="v"> Verdadero</label>
-    <label><input type="radio" name="q1" value="f"> Falso</label>
-  </div>
-
-  <div class="question">
-    <strong>2) Un punto por fuera de la FPP es alcanzable con los recursos actuales.</strong>
-    <label><input type="radio" name="q2" value="v"> Verdadero</label>
-    <label><input type="radio" name="q2" value="f"> Falso</label>
-  </div>
-
-  <button id="unlockBtn" onclick="verificarRespuestas()">Desbloquear mensaje</button>
-  <div class="result" id="result"></div>
-  <div class="locked" id="locked">🔒</div>
-</div>
-
-<div class="surprise" id="surprise">
-  <div class="cat-scene">
-    <div class="sign">
-      Eres mi persona favorita,<br>
-      eres muy importante para mí.<br>
-      Te quiero ❤️
+    <div class="attempts-box" id="attemptsBox">
+      Solo tienes 2 intentos · Intentos restantes: 2
     </div>
 
-    <div class="cat">
-      <div class="face">
-        <div class="eye"></div>
-        <div class="eye"></div>
+    <div class="quiz" id="quiz">
+      <div class="question">
+        <strong>1) La FPP muestra las combinaciones máximas de dos bienes que se pueden producir con recursos y tecnología dados.</strong>
+        <label><input type="radio" name="q1" value="v"> Verdadero</label>
+        <label><input type="radio" name="q1" value="f"> Falso</label>
       </div>
-      <div class="nose"></div>
-      <div class="mouth">⌣</div>
-    </div>
-  </div>
-</div>
 
-<div class="blocked-page" id="blockedPage">
-  <div class="cat-scene">
-    <div class="sign blocked-sign">
-      Esta página fue bloqueada 🔒<br>
-      Solo tenías 2 intentos
-    </div>
-
-    <div class="cat">
-      <div class="face">
-        <div class="eye"></div>
-        <div class="eye"></div>
+      <div class="question">
+        <strong>2) Un punto por fuera de la FPP es alcanzable con los recursos actuales.</strong>
+        <label><input type="radio" name="q2" value="v"> Verdadero</label>
+        <label><input type="radio" name="q2" value="f"> Falso</label>
       </div>
-      <div class="nose"></div>
-      <div class="mouth">⌣</div>
+
+      <button id="unlockBtn" onclick="verificarRespuestas()">Desbloquear mensaje</button>
+
+      <div class="result" id="result"></div>
+      <div class="locked" id="locked">🔒</div>
+    </div>
+
+    <div class="surprise" id="surprise">
+      <div class="cat-scene">
+        <div class="sign">
+          Eres mi persona favorita,<br>
+          eres muy importante para mí.<br>
+          Quiero pasar el resto de mi vida contigo.<br>
+          Te quiero, Belén ❤️<br>
+          Me gustaría hacer varias cosas contigo<br>
+          en los años de vida que me queden,<br>
+          estando a tu lado.
+        </div>
+
+        <div class="kiss" id="kiss">💋</div>
+
+        <div class="cat">
+          <div class="face">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+          <div class="nose"></div>
+          <div class="mouth">⌣</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blocked-page" id="blockedPage">
+      <div class="cat-scene">
+        <div class="sign blocked-sign">
+          Esta página fue bloqueada 🔒<br>
+          Solo tenías 2 intentos
+        </div>
+
+        <div class="cat">
+          <div class="face">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+          <div class="nose"></div>
+          <div class="mouth">⌣</div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-  </div>  <script>
+  <script>
     let errores = 0;
     const maxIntentos = 2;
     let musicaIniciada = false;
@@ -386,6 +438,7 @@ button:disabled {
     function verificarRespuestas() {
       const q1 = document.querySelector('input[name="q1"]:checked');
       const q2 = document.querySelector('input[name="q2"]:checked');
+
       const result = document.getElementById('result');
       const locked = document.getElementById('locked');
       const surprise = document.getElementById('surprise');
@@ -404,12 +457,15 @@ button:disabled {
         locked.textContent = '🔓';
         attemptsBox.textContent = '¡Correcto! Sorpresa desbloqueada ❤️';
 
+        iniciarMusicaRomantica();
+
         setTimeout(() => {
           quiz.style.display = 'none';
           surprise.classList.add('show');
-          iniciarMusicaRomantica();
           activarCorazones();
+          setTimeout(tirarBesito, 2600);
         }, 800);
+
       } else {
         errores++;
         const intentosRestantes = maxIntentos - errores;
@@ -437,10 +493,21 @@ button:disabled {
       }
     }
 
+    function tirarBesito() {
+      const kiss = document.getElementById('kiss');
+      if (!kiss) return;
+
+      kiss.classList.remove('show');
+      void kiss.offsetWidth;
+      kiss.classList.add('show');
+    }
+
     function activarCorazones() {
       if (lluviaActiva) return;
+
       lluviaActiva = true;
       crearCorazones(35);
+
       setInterval(() => crearCorazon(), 450);
     }
 
@@ -454,9 +521,11 @@ button:disabled {
       const corazon = document.createElement('div');
       corazon.classList.add('heart');
       corazon.innerHTML = Math.random() > 0.5 ? '❤️' : '💕';
+
       corazon.style.left = Math.random() * 100 + 'vw';
       corazon.style.fontSize = (18 + Math.random() * 34) + 'px';
       corazon.style.animationDuration = (3 + Math.random() * 3) + 's';
+
       document.body.appendChild(corazon);
 
       setTimeout(() => {
@@ -466,10 +535,15 @@ button:disabled {
 
     function iniciarMusicaRomantica() {
       if (musicaIniciada) return;
+
       musicaIniciada = true;
 
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       const audioCtx = new AudioContext();
+
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
 
       const master = audioCtx.createGain();
       master.gain.value = 0.12;
@@ -511,5 +585,6 @@ button:disabled {
       tocarMelodia();
       setInterval(tocarMelodia, 3900);
     }
-  </script></body>
+  </script>
+</body>
 </html>
